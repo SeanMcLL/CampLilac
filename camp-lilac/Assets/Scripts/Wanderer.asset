@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0028dba97c656843b644f892d7a3b43, type: 3}
+  m_Name: Wanderer
+  m_EditorClassIdentifier: 
+  gravityStrength: -24
+  gravityScale: 2.4464831
+  fallGravityMult: 1
+  maxFallSpeed: 6
+  fastFallGravityMult: 3
+  maxFastFallSpeed: 12
+  runMaxSpeed: 7
+  runAcceleration: 2
+  runAccelAmount: 14.285714
+  runDecceleration: 3
+  runDeccelAmount: 21.428572
+  accelInAir: 0.25
+  deccelInAir: 0.25
+  doConserveMomentum: 1
+  jumpHeight: 3
+  jumpTimeToApex: 0.5
+  jumpForce: 12
+  jumpCutGravityMult: 2
+  jumpHangGravityMult: 0.9
+  jumpHangTimeThreshold: 1
+  jumpHangAccelerationMult: 1
+  jumpHangMaxSpeedMult: 1
+  wallJumpForce: {x: 0, y: 0}
+  wallJumpRunLerp: 0
+  wallJumpTime: 0
+  doTurnOnWallJump: 0
+  slideSpeed: 0
+  slideAccel: 0
+  coyoteTime: 0.2
+  jumpInputBufferTime: 0.2

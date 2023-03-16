@@ -1,0 +1,4 @@
+repository "camp-lilac@roguecoder@cloud"
+  path "/"
+    br "/main"
+    co "/main"
