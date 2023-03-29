@@ -1,4 +1,3 @@
-repository "camp-lilac@roguecoder@cloud"
+rep "camp-lilac@roguecoder@cloud"
   path "/"
-    br "/main"
-    co "/main"
+    smartbranch "/main"

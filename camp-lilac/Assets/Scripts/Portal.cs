@@ -16,7 +16,7 @@ public class Portal : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         player.GetComponent<PlayerMovement>().enabled = false;
-        CLS.Instance.GameManager.DestinationScene = destinationScene;
+        CLS.Instance.SceneControlManager.DestinationScene = destinationScene;
         CLS.Instance.UIManager.blackout.SetTrigger("Blackout");
     }
 }

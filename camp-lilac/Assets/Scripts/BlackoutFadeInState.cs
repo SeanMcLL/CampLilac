@@ -9,12 +9,12 @@ public class BlackoutFadeInState : StateMachineBehaviour
     public void OnStateExit(Animator animator)
     {
         //Load the destination scene additively
-        SceneManager.LoadSceneAsync(CLS.Instance.GameManager.DestinationScene, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(CLS.Instance.SceneControlManager.DestinationScene, LoadSceneMode.Additive);
 
         //Unload the current scene
-        SceneManager.UnloadSceneAsync(CLS.Instance.GameManager.CurrentScene);
+        SceneManager.UnloadSceneAsync(CLS.Instance.SceneControlManager.CurrentScene);
 
         //Change Current Scene in Game Manager
-        CLS.Instance.GameManager.CurrentScene = CLS.Instance.GameManager.DestinationScene;
+        CLS.Instance.SceneControlManager.CurrentScene = CLS.Instance.SceneControlManager.DestinationScene;
     }
 }
