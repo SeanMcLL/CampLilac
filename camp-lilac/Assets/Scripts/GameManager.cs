@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
     public Transform playerZonePoint;
     public Transform enemyZonePoint;
     public Camera cam;
-    public string CurrentScene;
-    public string DestinationScene;
 
     //Stored Damage and Target
     private float storedDamage;
@@ -60,12 +58,12 @@ public class GameManager : MonoBehaviour
         //Set persistent enemy variable
         enemy = e.GetComponent<Combatant>();
         //Disable the smart camera and player movement
-        cam.GetComponent<SmartCamera>().enabled = false;
+        //cam.GetComponent<SmartCamera>().enabled = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         //Teleport camera, player, and enemy to battle zone
         playerPlatformPosition = player.transform.position;
-        cam.transform.position = battleZonePoint.position;
         player.transform.position = playerZonePoint.position;
+        CLS.Instance.CMVcam.Follow = battleZonePoint;
         e.transform.position = enemyZonePoint.position;
         //Form turn order
         teamGood.Add(player.GetComponent<Combatant>());
@@ -205,7 +203,7 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = playerPlatformPosition;
         um.battleUI.SetActive(false);
-        cam.GetComponent<SmartCamera>().enabled = true;
+        CLS.Instance.CMVcam.Follow = player.transform;
         player.GetComponent<PlayerMovement>().enabled = true;
         um.HideEndCombatPanel();
     }
