@@ -1066,7 +1066,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31d67c7498781d54dabb5f9a62d17b0c, type: 3}
   m_Name: 
@@ -3980,7 +3980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25da355b784464ebddc9cb5cb6ca24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScene: Ians Combat Transition
+  CurrentScene: Tutorial
   DestinationScene: 
   CurrentSceneObjectsManager: {fileID: 0}
 --- !u!1 &1957749183

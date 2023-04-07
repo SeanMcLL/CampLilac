@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eaa85818b90740945a52f739c235a0d5
+guid: d663495f8c4254848a8e34b893889215
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Black_Smith_Animated_with_sparks_0
+      name: Trevalio Vol2-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5759077b24c69141a608ef4130bf1c2
-      internalID: 868526576
+      spriteID: 349cd01c53371634eb85abab303f6d17
+      internalID: 1059290119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Black_Smith_Animated_with_sparks_1
+      name: Trevalio Vol2-sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,8 +140,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1168507ec242dda4dbd6ae9546a69889
-      internalID: -2097963292
+      spriteID: 8d70fe38dd4087d45810aff72e5301d8
+      internalID: -2025505418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trevalio Vol2-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ef6ea514b16a940b17ede4a9d80ed2
+      internalID: 251578375
       vertices: []
       indices: 
       edges: []
@@ -157,8 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Black_Smith_Animated_with_sparks_0: 868526576
-      Black_Smith_Animated_with_sparks_1: -2097963292
+      Trevalio Vol2-sheet_0: 1059290119
+      Trevalio Vol2-sheet_1: -2025505418
+      Trevalio Vol2-sheet_2: 251578375
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
