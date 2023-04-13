@@ -24,6 +24,9 @@ public class Combatant : MonoBehaviour
     //Mana Points
     public int mp;
     public int maxMp;
+
+    // Skill Points
+    public int upgradePoints;
     
 
     //Weakness Enum
