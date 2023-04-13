@@ -26,7 +26,7 @@ public class WeaponShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (player.upgradePoints > 0){
+        if (player.upgradePoints > 0){
             if(Input.GetKeyDown(KeyCode.O)){
                 sword.damage += 1;
                 player.upgradePoints -= 1;
