@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Old Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Ians Combat Transition.unity
+    path: Assets/Scenes/Tutorial.unity
     guid: e1537c5b1481c7b47ac71f7bae95f55a
   - enabled: 1
     path: Assets/Scenes/CampLilac.unity
     guid: 5bf447bae5815b449b3569676715d9a7
+  - enabled: 1
+    path: Assets/Scenes/Persistent.unity
+    guid: d945b8d5209d6b64dbf4d3747360daf7
+  - enabled: 1
+    path: Assets/Scenes/BattleZone.unity
+    guid: f549bd66ac0f9164aaafd3633a1849b2
+  - enabled: 1
+    path: Assets/Scenes/Forest1.unity
+    guid: ef88c8cca4e4b8346b6006e46d5d3bc7
   m_configObjects: {}

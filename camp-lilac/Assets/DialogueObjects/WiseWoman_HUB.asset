@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d66459bc360ec4ca252b5c6845856f, type: 3}
+  m_Name: WiseWoman_HUB
+  m_EditorClassIdentifier: 
+  name: Wise Woman
+  sentences:
+  - My my, so you managed to slay that abomination did you now?
+  - No one has slain a demon before.
+  - Could you be the one we've been waiting for...?
+  - Perhaps, perhaps not. Who is to say really.
+  - Young one, do you know how these lands came to be the way they are?
+  - Few remember the tale, and even fewer know the truth.
+  - Once, there was a king whose lust for power knew no bounds.
+  - He had discovered, from an ancient tome, that he could ascend to godhood by sacrficing
+    the lives of his people and opening a portal to hell itself and leading it's
+    armies.
+  - A lie, of course, but he knew no better.
+  - His lust for power was stronger than reasoning.
+  - And so, he gathered up the masses to be sacrified in the name of his ascension
+    to godhood.
+  - After many lives were slaughtered, the king finally succeeded in opening the
+    portal and the armies of hell spewed from it's opening.
+  - The king, beaming with mad pride prepared to lead his new army and gain never
+    before seen power.
+  - But no matter how convincing, or how exquisite. A lie, will remain just that.
+    A lie.
+  - The demons slew the king began to ravage the surrounding lands. Killing and destroying
+    all in their wake.
+  - After sometime, humanity came to assume a fleeting form. As slaves to the demons.
+  - And that is how the world has been, until you came along.
+  - No one has come this far, not for a very long while.
+  - Young one, you may be the very hope that humanity has so desperatley needed.
+  - But enough of my ramblings.
+  - Take a look around camp and make yourself at home.
+  - If you wish to venture back out into the world, you would do well to prepare.

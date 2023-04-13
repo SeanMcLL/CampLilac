@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eaa85818b90740945a52f739c235a0d5
+guid: ea84129603dc5be40b8978260ed68460
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Black_Smith_Animated_with_sparks_0
+      name: Demon Fox Animated_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 50
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5759077b24c69141a608ef4130bf1c2
-      internalID: 868526576
+      spriteID: f5288a07a6731024599dd16d7a29694d
+      internalID: -1306830441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Black_Smith_Animated_with_sparks_1
+      name: Demon Fox Animated_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 50
         y: 0
-        width: 32
-        height: 32
+        width: 50
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1168507ec242dda4dbd6ae9546a69889
-      internalID: -2097963292
+      spriteID: 166b07e6d6f2a114380ea24023b6ca73
+      internalID: -945687275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Fox Animated_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41734a66458e05438735a9419497e55
+      internalID: -492656884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon Fox Animated_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 50
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2dc8def987e7048acc994318fbb7c4
+      internalID: 1460151822
       vertices: []
       indices: 
       edges: []
@@ -157,8 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Black_Smith_Animated_with_sparks_0: 868526576
-      Black_Smith_Animated_with_sparks_1: -2097963292
+      Demon Fox Animated_0: -1306830441
+      Demon Fox Animated_3: 1460151822
+      Demon Fox Animated_2: -492656884
+      Demon Fox Animated_1: -945687275
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

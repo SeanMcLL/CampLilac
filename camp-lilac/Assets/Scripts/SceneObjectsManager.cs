@@ -10,11 +10,12 @@ public class SceneObjectsManager : MonoBehaviour
 
     void Awake()
     {
-        PlayerOrigin = GameObject.Find("PlayerOrigin").transform;
-        LeftCamBorder = GameObject.Find("LeftCamBorder").transform;
-        RightCamBorder = GameObject.Find("RightCamBorder").transform;
+        PlayerOrigin = transform.GetChild(0);
+        LeftCamBorder = transform.GetChild(1);
+        RightCamBorder = transform.GetChild(2);
 
         CLS.Instance.SceneControlManager.CurrentSceneObjectsManager = this;
+        CLS.Instance.SceneControlManager.InitScene();
         SmartCamera smartCamera = Camera.main.GetComponent<SmartCamera>();
         smartCamera.leftLevelWall = LeftCamBorder;
         smartCamera.rightLevelWall = RightCamBorder;

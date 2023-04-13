@@ -9,19 +9,10 @@ public class SceneControlManager : MonoBehaviour
     public string DestinationScene;
     public SceneObjectsManager CurrentSceneObjectsManager;
 
-    // Start is called before the first frame update
-    void OnEnable()
+    public void InitScene()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name != "Persistent")
-        {
-            CLS.Instance.Player.transform.position = CurrentSceneObjectsManager.PlayerOrigin.position;
-            CLS.Instance.Player.GetComponent<PlayerMovement>().enabled = true;
-        }
+        CLS.Instance.Player.transform.position = CurrentSceneObjectsManager.PlayerOrigin.position;
+        CLS.Instance.Player.GetComponent<PlayerMovement>().enabled = true;
     }
 
 }
