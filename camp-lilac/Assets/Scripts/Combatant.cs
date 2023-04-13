@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class Combatant : MonoBehaviour
 {
+    public string combatantName;
     //Game Manager
     private GameManager gm;
     private UIManager um;
@@ -24,6 +25,9 @@ public class Combatant : MonoBehaviour
     //Mana Points
     public int mp;
     public int maxMp;
+
+    // Skill Points
+    public int upgradePoints;
     
 
     //Weakness Enum
@@ -66,8 +70,6 @@ public class Combatant : MonoBehaviour
     public Weapon spell1;
     public Weapon spell2;
     public Weapon spell3;
-
-    
 
     //Bool to check if players are alive and can take their turn
     public bool isAlive;
@@ -213,6 +215,16 @@ public class Combatant : MonoBehaviour
     public bool CritCheck() {
         if (Random.Range(0f, 1f) < critchance/100) {
             Debug.Log("Critical Hit!");
+            return true;
+        }
+        return false;
+    }
+
+    public bool EvasionCheck()
+    {
+        if (Random.Range(0f, 1f) < evasion / 100)
+        {
+            Debug.Log("Dodged Hit!");
             return true;
         }
         return false;
