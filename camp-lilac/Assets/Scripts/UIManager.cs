@@ -34,7 +34,10 @@ public class UIManager : MonoBehaviour
     public GameObject endCombatPanel;
     public TextMeshProUGUI endCombatText;
     public Vector3 endCombatPanelRestPos;
+    //Battle UI
     public GameObject battleUI;
+    public TextMeshProUGUI leftName;
+    public TextMeshProUGUI rightName;
     public GameObject deathScreen;
     public Animator blackout;
 

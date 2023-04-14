@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour
         teamBad.Add(enemy);
         FormTurnOrder();
         //enable combat ui
+        um.leftName.text = player.GetComponent<Combatant>().combatantName;
+        um.rightName.text = enemy.combatantName;
         um.battleUI.SetActive(true);
         Combatant turnTaker = turnOrder[currentTurnOrder];
         //update combat machine
@@ -167,6 +169,9 @@ public class GameManager : MonoBehaviour
                 {
                     float damage = actionTaker.ComputeDamageApplied(weapon.damage);
                     target.TakeDamage(damage);
+                } else
+                {
+
                 }
                 break;
 

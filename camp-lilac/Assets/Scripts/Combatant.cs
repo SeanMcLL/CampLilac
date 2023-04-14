@@ -17,6 +17,7 @@ public class Combatant : MonoBehaviour
     public Image healthBar;
     public GameObject attackIcon;
     public TextMeshProUGUI damageNumber;
+    public TextMeshProUGUI statusText;
 
     //Hit Points
     public int hp;
@@ -178,15 +179,7 @@ public class Combatant : MonoBehaviour
         //Apply damage number
         damageNumber.text = intDamage.ToString();
         //Define damage number animation
-        float startYPos = damageNumber.transform.position.y;
-        Sequence damageNumberFade = DOTween.Sequence();
-        damageNumberFade.Append(damageNumber.DOFade(1, 0.1f))
-            .PrependInterval(1)
-            .Append(damageNumber.DOFade(0, 2));
-        Sequence damageNumberFloat = DOTween.Sequence();
-        damageNumberFloat.Append(damageNumber.transform.DOMoveY(startYPos+1f,2))
-            .PrependInterval(1)
-            .Append(damageNumber.transform.DOMoveY(startYPos,0.25f));
+        damageNumber.GetComponent<Animator>().SetTrigger("ShowDamageNumber");
         //Check die
         if (hp <= 0) {
             Die();
@@ -215,6 +208,7 @@ public class Combatant : MonoBehaviour
     public bool CritCheck() {
         if (Random.Range(0f, 1f) < critchance/100) {
             Debug.Log("Critical Hit!");
+            UpdateStatusText("Crit!");
             return true;
         }
         return false;
@@ -237,5 +231,11 @@ public class Combatant : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void UpdateStatusText(string text)
+    {
+        statusText.text = text;
+        statusText.GetComponent<Animator>().SetTrigger("ShowStatusText");
     }
 }
