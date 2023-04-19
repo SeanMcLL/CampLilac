@@ -17,5 +17,5 @@ MonoBehaviour:
   rarity: 1
   attackIconSprite: {fileID: 21300000, guid: 55e965fc57591f04d8d9e914cd619511, type: 3}
   damage: 100
-  accuracy: 1
+  accuracy: 0.8
   isCounterable: 0

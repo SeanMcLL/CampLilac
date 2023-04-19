@@ -6253,8 +6253,8 @@ MonoBehaviour:
   attackIcon: {fileID: 1037584721}
   damageNumber: {fileID: 2035060976}
   statusText: {fileID: 1625387197}
-  hp: 20
-  maxHp: 20
+  hp: 50
+  maxHp: 50
   mp: 0
   maxMp: 0
   upgradePoints: 10

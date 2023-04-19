@@ -96,7 +96,7 @@ public class Combatant : MonoBehaviour
                 //Display the battle actions UI
                 um.EnableBattleActionUIPanel();
             } else {
-                ChooseAction(GameManager.ActionType.attack, 0);
+                ChooseAction(GameManager.ActionType.attack, AIChooseAttackSlot());
             }
         }
         else {
@@ -106,7 +106,6 @@ public class Combatant : MonoBehaviour
     }
 
     public void ChooseAction(GameManager.ActionType actionType, int slot) {
-        Debug.Log(gameObject.name);
         Combatant target = gm.findTargets(this)[0];
         if (gameObject.tag == "Player") {
             um.ChangePanel(um.mainASP);
@@ -118,22 +117,26 @@ public class Combatant : MonoBehaviour
         }
         if (actionType == GameManager.ActionType.attack)
         {
-            attackIcon.GetComponent<SpriteRenderer>().sprite = slot==0?mWeapon.attackIconSprite:rWeapon.attackIconSprite;
-        }
-        else if (actionType == GameManager.ActionType.spell)
-        {
-            if (slot == 0)
+            Sprite attackIconSprite = null;
+            switch (slot)
             {
-                attackIcon.GetComponent<SpriteRenderer>().sprite = spell1.attackIconSprite;
+                case 0:
+                    attackIconSprite = mWeapon.attackIconSprite;
+                    break;
+                case 1:
+                    attackIconSprite = rWeapon.attackIconSprite;
+                    break;
+                case 2:
+                    attackIconSprite = spell1.attackIconSprite;
+                    break;
+                case 3:
+                    attackIconSprite = spell2.attackIconSprite;
+                    break;
+                case 4:
+                    attackIconSprite = spell3.attackIconSprite;
+                    break;
             }
-            else if (slot == 1)
-            {
-                attackIcon.GetComponent<SpriteRenderer>().sprite = spell2.attackIconSprite;
-            }
-            else if (slot == 2)
-            {
-                attackIcon.GetComponent<SpriteRenderer>().sprite = spell3.attackIconSprite;
-            }
+            attackIcon.GetComponent<SpriteRenderer>().sprite = attackIconSprite;
         }
         if (actionType == GameManager.ActionType.attack && slot==0) {
             float startX = transform.position.x;
@@ -164,13 +167,18 @@ public class Combatant : MonoBehaviour
         return d;
     }
     public void TakeDamage(float damage) {
+        //Check for evade
+        if (EvasionCheck())
+        {
+            UpdateStatusText("Dodged!");
+            return;
+        }
         //Compute the damage received after defenseive modifiers
         float adjDamage = ComputeDamageRecieved(damage);
         //Round adjDamage to int
         int intDamage = Mathf.RoundToInt(adjDamage);
         if (intDamage == 0) {
             intDamage = (Random.value>0.5)?1:0;
-            Debug.Log(intDamage);
         }
         //Modify hp
         hp -= intDamage;
@@ -235,7 +243,31 @@ public class Combatant : MonoBehaviour
 
     public void UpdateStatusText(string text)
     {
+        Debug.Log(name);
         statusText.text = text;
         statusText.GetComponent<Animator>().SetTrigger("ShowStatusText");
     }
+
+    int AIChooseAttackSlot()
+    {
+        List<int> possibleAttackSlots = new();
+        if (mWeapon != null)
+        {
+            possibleAttackSlots.Add(0);
+        } if (rWeapon != null)
+        {
+            possibleAttackSlots.Add(1);
+        } if (spell1 != null)
+        {
+            possibleAttackSlots.Add(2);
+        } if (spell2 != null)
+        {
+            possibleAttackSlots.Add(3);
+        } if (spell3 != null)
+        {
+            possibleAttackSlots.Add(4);
+        }
+        return possibleAttackSlots[Random.Range(0, possibleAttackSlots.Count)];
+    }
 }
+

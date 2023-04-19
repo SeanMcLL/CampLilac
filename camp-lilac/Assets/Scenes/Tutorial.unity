@@ -4260,6 +4260,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6148004671567803891, guid: 6c162df8b1ebeaf499b200f16da55389, type: 3}
+      propertyPath: hp
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148004671567803891, guid: 6c162df8b1ebeaf499b200f16da55389, type: 3}
+      propertyPath: maxHp
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148004671567803891, guid: 6c162df8b1ebeaf499b200f16da55389, type: 3}
+      propertyPath: spell1
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6148004671567803893, guid: 6c162df8b1ebeaf499b200f16da55389, type: 3}
       propertyPath: m_RootOrder
       value: 7
