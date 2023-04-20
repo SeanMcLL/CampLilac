@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+camp-lilac/.plastic/plastic.changes
+camp-lilac/.plastic/plastic.wktree
+*.meta
+camp-lilac/.plastic/plastic.changes
+camp-lilac/.plastic/plastic.wktree

@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour
         teamBad.Add(enemy);
         FormTurnOrder();
         //enable combat ui
+        um.leftName.text = player.GetComponent<Combatant>().combatantName;
+        um.rightName.text = enemy.combatantName;
         um.battleUI.SetActive(true);
         Combatant turnTaker = turnOrder[currentTurnOrder];
         //update combat machine
@@ -116,35 +118,12 @@ public class GameManager : MonoBehaviour
 
     //Recieve action from the combatant
     public void ReceiveAction(ActionType actionType, int slot, Combatant target) {
-        Debug.Log("Recieved Action! - " + actionType);
         //Cache turn taker
         Combatant actionTaker = turnOrder[currentTurnOrder];
 
         storedActionInfo = new ActionInfo(actionType, slot, target);
-        StartCoroutine(DelayNextTurn(actionTaker));
     }
-    IEnumerator DelayNextTurn(Combatant actionTaker)
-    {
-        yield return new WaitForSeconds(2);
-        actionTaker.attackIcon.SetActive(false);
-        UpdateTurnTaker();
-        Combatant turnTaker = turnOrder[currentTurnOrder];
-        //update combat machine
-        bool isPlayerTurn = (turnTaker.gameObject.tag == "Player");
-        combatMachine.SetBool("isPlayerTurn", isPlayerTurn);
-        Debug.Log(teamGood);
-        Debug.Log(teamBad);
-        if (findTargets(turnTaker).Count == 0) {
-            Debug.Log("end combat");
-            if (findTeam(turnTaker) == teamGood) {
-                um.EndCombatPanel(true);
-            } else {
-                um.EndCombatPanel(false);
-            }
-            EndCombat();
-        }   
-    }
-
+   
     public void StartTurn()
     {
         Combatant turnTaker = turnOrder[currentTurnOrder];
@@ -162,34 +141,55 @@ public class GameManager : MonoBehaviour
         {
             //On selecting the attack action
             case ActionType.attack:
-                Weapon weapon = slot == 0 ? actionTaker.mWeapon : actionTaker.rWeapon;
-                if (weapon.HitCheck())
-                {
-                    float damage = actionTaker.ComputeDamageApplied(weapon.damage);
-                    target.TakeDamage(damage);
-                }
-                break;
-
-            case ActionType.spell:
-                Weapon spell = actionTaker.spell1;
+                Weapon weapon = actionTaker.mWeapon;
                 switch (slot)
                 {
                     case 0:
-                        spell = actionTaker.spell1;
+                        weapon = actionTaker.mWeapon;
                         break;
                     case 1:
-                        spell = actionTaker.spell2;
+                        weapon = actionTaker.rWeapon;
                         break;
                     case 2:
-                        spell = actionTaker.spell3;
+                        weapon = actionTaker.spell1;
+                        break;
+                    case 3:
+                        weapon = actionTaker.spell2;
+                        break;
+                    case 4:
+                        weapon = actionTaker.spell3;
                         break;
                 }
-                if (spell.HitCheck())
+                if (weapon.HitCheck())
                 {
-                    float damage = actionTaker.ComputeDamageApplied(spell.damage);
+                    Debug.Log(actionTaker.name);
+                    float damage = actionTaker.ComputeDamageApplied(weapon.damage);
                     target.TakeDamage(damage);
+                } else
+                {
+                    actionTaker.UpdateStatusText("Miss!");
                 }
                 break;
+        }
+
+        actionTaker.attackIcon.SetActive(false);
+        UpdateTurnTaker();
+        Combatant turnTaker = turnOrder[currentTurnOrder];
+        //update combat machine
+        bool isPlayerTurn = (turnTaker.gameObject.tag == "Player");
+        combatMachine.SetBool("isPlayerTurn", isPlayerTurn);
+        if (findTargets(turnTaker).Count == 0)
+        {
+            Debug.Log("end combat");
+            if (findTeam(turnTaker) == teamGood)
+            {
+                um.EndCombatPanel(true);
+            }
+            else
+            {
+                um.EndCombatPanel(false);
+            }
+            EndCombat();
         }
     }
 

@@ -267,10 +267,12 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   attackIcon: {fileID: 9187247741449695635}
   damageNumber: {fileID: 1057811379131891520}
+  statusText: {fileID: 9187247743178808310}
   hp: 15
   maxHp: 15
   mp: 0
   maxMp: 0
+  upgradePoints: 0
   con: 0
   str: 1
   dex: 0
@@ -390,6 +392,17 @@ RectTransform:
 --- !u!114 &1057811379131891520 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8201530998564475915, guid: 61ebb35833646c84dbece65fc7bd76eb, type: 3}
+  m_PrefabInstance: {fileID: 9187247741561989963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9187247743178808310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1625387197, guid: 61ebb35833646c84dbece65fc7bd76eb, type: 3}
   m_PrefabInstance: {fileID: 9187247741561989963}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

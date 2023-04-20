@@ -56,6 +56,14 @@ PrefabInstance:
       value: PossessedScarecrow
       objectReference: {fileID: 0}
     - target: {fileID: 9187247742706401279, guid: fbe9105e9f3639d45918587f4f795c87, type: 3}
+      propertyPath: mWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d71eed68d8e2004297c463d7962ad93, type: 2}
+    - target: {fileID: 9187247742706401279, guid: fbe9105e9f3639d45918587f4f795c87, type: 3}
+      propertyPath: rWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 726594e0c797fdc4b9e69dffee1f5a9c, type: 2}
+    - target: {fileID: 9187247742706401279, guid: fbe9105e9f3639d45918587f4f795c87, type: 3}
       propertyPath: combatantName
       value: Posessed Scarecrow
       objectReference: {fileID: 0}
