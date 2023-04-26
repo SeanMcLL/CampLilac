@@ -17,7 +17,5 @@ public class SceneObjectsManager : MonoBehaviour
         CLS.Instance.SceneControlManager.CurrentSceneObjectsManager = this;
         CLS.Instance.SceneControlManager.InitScene();
         SmartCamera smartCamera = Camera.main.GetComponent<SmartCamera>();
-        smartCamera.leftLevelWall = LeftCamBorder;
-        smartCamera.rightLevelWall = RightCamBorder;
     }
 }
