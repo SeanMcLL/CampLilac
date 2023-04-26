@@ -6,9 +6,16 @@ using UnityEngine;
 
 public class Weapon : ScriptableObject
 {
-    
+    public enum WeaponType
+    {
+        Melee,
+        Ranged,
+        Spell
+    }
+
     //Item info
     public string w_name;
+    public WeaponType type;
     public float value;
     public int rarity;
     public Sprite attackIconSprite;
