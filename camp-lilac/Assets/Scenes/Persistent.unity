@@ -285,7 +285,7 @@ Animator:
   m_GameObject: {fileID: 148290107}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af848c95895d70242b677b88b8bbb9a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3eca9b7678ee2324fb55baca262be8fc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1095,7 +1095,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420036}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420037}
   m_Layer: 0
@@ -1173,22 +1172,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d67c7498781d54dabb5f9a62d17b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1720848393}
-  seekSpeed: 8
-  leftLevelWall: {fileID: 0}
-  rightLevelWall: {fileID: 0}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5373,6 +5356,7 @@ GameObject:
   - component: {fileID: 2041597477}
   - component: {fileID: 2041597476}
   - component: {fileID: 2041597479}
+  - component: {fileID: 2041597480}
   m_Layer: 0
   m_Name: CMVcam
   m_TagString: Untagged
@@ -5461,6 +5445,21 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 3, z: 0}
   m_ApplyAfter: 1
   m_PreserveComposition: 0
+--- !u!114 &2041597480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041597474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 0}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!1 &2047452941
 GameObject:
   m_ObjectHideFlags: 0
@@ -6301,6 +6300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2144790560}
     m_Modifications:
+    - target: {fileID: 1625387196, guid: 61ebb35833646c84dbece65fc7bd76eb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 272bb4eee6a2f204291837c77a9eb31a, type: 2}
     - target: {fileID: 8201530997627977339, guid: 61ebb35833646c84dbece65fc7bd76eb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
