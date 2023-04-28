@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject battleActionUIPanel;
     public bool inCombat;
     public Animator endCombatPanelAnimator;
+    public GameObject weaponCanvas;
 
     public void EnableBattleActionUIPanel() {
         battleActionUIPanel.SetActive(true);
@@ -44,6 +45,10 @@ public class UIManager : MonoBehaviour
     //Combat UI
     public Image leftHealthBar;
     public Image rightHealthBar;
+
+    //Weapon Shop UI
+    public TextMeshProUGUI UpgradePointsValue;
+    public TextMeshProUGUI WeaponPointsText;
 
     void Start() {
         //Debug.Log("Start was called");
@@ -77,6 +82,22 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && inCombat == true) {
             SelectAction();
         }
+    }
+
+    public void EnableWeaponCanvas() {
+        UpdateWeaponCanvas();
+        weaponCanvas.SetActive(true);
+    }
+
+    public void DisableWeaponCanvas() {
+        
+        weaponCanvas.SetActive(false);
+        
+    }
+
+    public void UpdateWeaponCanvas() {
+        UpgradePointsValue.text = player.upgradePoints.ToString();
+        WeaponPointsText.text = player.mWeapon.damage.ToString();  
     }
 
     void CheckActionIndexBounds() {
