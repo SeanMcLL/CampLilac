@@ -174,13 +174,13 @@ public class UIManager : MonoBehaviour
         else if (currentASP == magicASP) {
             switch(selectedActionText) {
                 case 1:
-                    player.ChooseAction(GameManager.ActionType.spell, 0);
+                    player.ChooseAction(GameManager.ActionType.attack, 2);
                     break;
                 case 2:
-                    player.ChooseAction(GameManager.ActionType.spell, 1);
+                    player.ChooseAction(GameManager.ActionType.attack, 3);
                     break;
                 case 3:
-                    player.ChooseAction(GameManager.ActionType.spell, 2);
+                    player.ChooseAction(GameManager.ActionType.attack, 4);
                     break;
                 case 4:
                     ChangePanel(mainASP);

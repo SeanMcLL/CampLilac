@@ -182,8 +182,7 @@ public class Combatant : MonoBehaviour
         }
         //Modify hp
         hp -= intDamage;
-        //Adjust health bar
-        healthBar.fillAmount = (float)hp/(float)maxHp;
+        UpdateHealthBar();
         //Apply damage number
         damageNumber.text = intDamage.ToString();
         //Define damage number animation
@@ -240,7 +239,11 @@ public class Combatant : MonoBehaviour
         }
         return false;
     }
-
+    public void UpdateHealthBar()
+    {
+        //Adjust health bar
+        healthBar.fillAmount = (float)hp / (float)maxHp;
+    }
     public void UpdateStatusText(string text)
     {
         Debug.Log(name);

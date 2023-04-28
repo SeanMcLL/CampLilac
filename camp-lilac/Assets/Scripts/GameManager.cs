@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     public void StartCombat(GameObject e) {
         //start combat music
         um.inCombat = true;
+        combatMachine.SetBool("isEndCombat", false);
         am.musicSource.clip = am.battleTheme;
         am.musicSource.Play();
         //Set persistent enemy variable
@@ -196,6 +197,7 @@ public class GameManager : MonoBehaviour
     public void EndCombat() {
         //update combat machine
         combatMachine.SetBool("isEndCombat", true);
+        um.inCombat = false;
     }
     
 

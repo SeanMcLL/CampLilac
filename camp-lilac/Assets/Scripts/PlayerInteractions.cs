@@ -81,7 +81,14 @@ public class PlayerInteractions : MonoBehaviour
         }
         
 
-        //(pc.bounds.Intersect()) 
+        if (col.gameObject.layer == LayerMask.NameToLayer("Kill Plane"))
+        {
+            transform.position = CLS.Instance.SceneControlManager.CurrentSceneObjectsManager.PlayerOrigin.position;
+            //Modify hp
+            pc.hp -= 10;
+            //Adjust health bar
+            pc.healthBar.fillAmount = (float)pc.hp / (float)pc.maxHp;
+        }
        
     }
 
