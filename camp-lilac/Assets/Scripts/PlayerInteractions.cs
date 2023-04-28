@@ -6,10 +6,12 @@ public class PlayerInteractions : MonoBehaviour
 {
     public LayerMask enemyLayer;
 
-    public GameObject currentNPCTrigger;
+    public GameObject currentInteractionTrigger;
     public bool hasBeenTriggered = false;
     public bool isTurn;
     public bool isColliding;
+    public bool isShopMenu;
+    public bool isDialogue;
     public GameObject player;
     public Camera cam;
     private GameManager gm;
@@ -35,7 +37,14 @@ public class PlayerInteractions : MonoBehaviour
                 player.GetComponent<PlayerMovement>().enabled = false;
                 //hasBeenTriggered = true;
                 // goes to DialogueTrigger function 
-                currentNPCTrigger.GetComponent<DialogueTrigger>().TriggerDialogue();
+                if (isDialogue == true){
+                    currentInteractionTrigger.GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                if (isShopMenu == true){
+                    Debug.Log("is shop menu is true and e is pressed");
+                    //activate shop menu
+                    currentInteractionTrigger.GetComponent<WeaponShop>().OpenShop();
+                }
             }
     }
 
@@ -57,8 +66,20 @@ public class PlayerInteractions : MonoBehaviour
             animator = col.gameObject.transform.GetChild(0).GetComponent<Animator>();
             animator.SetBool("isVisible", true);
             isColliding = true;
-            currentNPCTrigger = col.gameObject;
+            isDialogue = true;
+            currentInteractionTrigger = col.gameObject;
         }
+        
+        //interaction with shop (upgrade sword or bow by blacksmith)
+        if (col.gameObject.layer == LayerMask.NameToLayer("Shop")){
+            animator = col.gameObject.transform.GetChild(0).GetComponent<Animator>();
+            animator.SetBool("isVisible", true);
+            isColliding = true;
+            isShopMenu = true;
+            currentInteractionTrigger = col.gameObject;
+
+        }
+        
 
         //(pc.bounds.Intersect()) 
        
@@ -69,11 +90,21 @@ public class PlayerInteractions : MonoBehaviour
 
         if (col.gameObject.layer == LayerMask.NameToLayer("NPC")) {
             isColliding = false;
-            currentNPCTrigger = null;
+            isDialogue = false;
+            currentInteractionTrigger = null;
             animator = col.gameObject.transform.GetChild(0).GetComponent<Animator>();
             animator.SetBool("isVisible", false);
 
         }
-        
+
+        if (col.gameObject.layer == LayerMask.NameToLayer("Shop")) {
+            isColliding = false;
+            isShopMenu = false;
+            currentInteractionTrigger = null;
+            animator = col.gameObject.transform.GetChild(0).GetComponent<Animator>();
+            animator.SetBool("isVisible", false);
+
+        }
+
     }
 }
